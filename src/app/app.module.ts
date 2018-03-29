@@ -10,13 +10,15 @@ import { FormsModule} from '@angular/forms';
 import { SujetsComponent } from './sujets/sujets.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     LoginComponent,
-    SujetsComponent
+    SujetsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
