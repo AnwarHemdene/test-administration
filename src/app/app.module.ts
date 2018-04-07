@@ -11,6 +11,19 @@ import { SujetsComponent } from './sujets/sujets.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthService } from './auth.service';
+import { SujetService} from '../app/sujets/shared/sujet.service';
+
+import {SujetComponent} from './sujets/sujet/sujet.component' ;
+import {SujetListComponent} from './sujets/sujet-list/sujet-list.component';
+import {ToastrModule} from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -18,14 +31,22 @@ import { HomeComponent } from './home/home.component';
     ProfileComponent,
     LoginComponent,
     SujetsComponent,
-    HomeComponent
+    HomeComponent,
+    SujetsComponent,
+    SujetComponent,
+    SujetListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    ToastrModule.forRoot()
   ],
+  providers: [AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
