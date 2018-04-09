@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-import {SujetClass} from './sujet-class.model';
+import {Sujet} from './sujet.model';
 
 @Injectable()
 export class SujetService {
 
 sujetList: AngularFireList<any>;
-sujetSelectione: SujetClass = new SujetClass();
+sujetSelectione: Sujet = new Sujet();
 
 
   constructor(private firebase: AngularFireDatabase) {
@@ -18,19 +18,22 @@ sujetSelectione: SujetClass = new SujetClass();
      return this.sujetList;
    }
 
-   insertSujet(sujet: SujetClass){
+   insertSujet(sujet: Sujet){
      this.sujetList.push({
       title: sujet.title,
       description: sujet.description,
-      imgsrc : sujet.imgsrc
+      // imgsrc : sujet.imgsrc,
+      // imgName: sujet.imgName
+
    });
    }
 
-   updateSujet(sujet: SujetClass){
+   updateSujet(sujet: Sujet){
      this.sujetList.update(sujet.$key,{
       title: sujet.title,
       description: sujet.description,
-      imgsrc : sujet.imgsrc
+      // imgsrc : sujet.imgsrc,
+      // imgName: sujet.imgName
      })
    }
 

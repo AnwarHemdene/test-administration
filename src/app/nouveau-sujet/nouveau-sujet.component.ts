@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import {SujetService} from './../shared/sujet.service';
+import {SujetService} from './../sujet.service';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
-  selector: 'app-sujet',
-  templateUrl: './sujet.component.html',
-  styleUrls: ['./sujet.component.css']
+  selector: 'app-nouveau-sujet',
+  templateUrl: './nouveau-sujet.component.html',
+  styleUrls: ['./nouveau-sujet.component.scss']
 })
-export class SujetComponent implements OnInit {
+export class NouveauSujetComponent implements OnInit {
   selectedFile: File  = null;
   files : FileList;
   constructor( private sujetService:  SujetService , private http: HttpClient ,
@@ -19,7 +19,7 @@ export class SujetComponent implements OnInit {
   onFileSelected($event){
     this.selectedFile =$event.target.files[0].name;
     // console.log(event);
-    this.toastr.success('Submitted Successfully', 'Sujet publié')
+    // this.toastr.success('Submitted Successfully', 'Sujet publié')
   }
   
   // onUpload(){
@@ -39,8 +39,13 @@ export class SujetComponent implements OnInit {
   }
 
   onSubmit(sujetForm : NgForm){
+    if(sujetForm.value.$key == null)
     this.sujetService.insertSujet(sujetForm.value);
+    else 
+    this.sujetService.updateSujet(sujetForm.value);
     this.resetForm(sujetForm);  
+    this.toastr.success('Submitted Successfully','Sujet publié');
+ 
   }
 
   resetForm(sujetForm? : NgForm){
@@ -50,8 +55,8 @@ export class SujetComponent implements OnInit {
       $key : null,
       title: '',
       description: '',
-      imgsrc: '',
-      imgName: '',
+      // imgsrc: '',
+      // imgName: '',
     }
   }
 }

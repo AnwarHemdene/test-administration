@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SujetsComponent } from './sujets/sujets.component';
 import { HomeComponent } from './home/home.component';
+import {NouveauSujetComponent} from './nouveau-sujet/nouveau-sujet.component'
+import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
 const routes: Routes = [
   {
     //home path, put nothing inside it
@@ -23,10 +24,15 @@ const routes: Routes = [
 },
 {
   //:id called route parameter
-path: 'sujets',
-component: SujetsComponent
+path: 'liste-sujets',
+component: ListeSujetsComponent
+},
+{
+path: 'nouveau-sujet',
+component: NouveauSujetComponent
 }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

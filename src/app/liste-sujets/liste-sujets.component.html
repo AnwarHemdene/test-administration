@@ -1,0 +1,79 @@
+<!-- 
+
+<div class="custom">
+    <div class="custom-button">
+        <button type="button" class="btn btn-warning">Nouveau Sujet</button>
+      </div>
+<h6 class="text-center"> List des Sujets</h6><br>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let sujet of sujetList">
+    <td>{{sujet.title}}</td>
+    <td>{{sujet.description}}</td>
+    <td>{{sujet.imgsrc}}</td>
+    <td>{{sujet.imgName}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(sujet)">
+        <i class="fa fa-edit-o"></i>
+      </a>
+      <a class="btn" (click)="onDelete(sujet.$key)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
+</div> -->
+
+
+<!--Section: Blog v.1-->
+<section class="py-4 text-center text-lg-left"  class="background">
+    <div class="custom-button">
+      <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+          <button type="button" class="btn btn-outline-warning waves-effect"(click)="createNew()">Nouveau Sujet</button>
+        </div>
+      </div>
+    </div> 
+    <!--Section heading-->
+    <h1 class="h1 font-weight-bold text-center mb-5 pt-4">Liste des sujets</h1>
+    <!--Section description-->
+    <!--Grid row-->
+    <div class="row" *ngFor="let sujet of sujetList"  >
+
+        <!--Grid column-->
+        <div class="col-lg-7 col-xl-7 pb-3">
+            <!--Excerpt-->
+            <a href="" class="orange-text">
+                <h6 class="font-weight-bold pb-1">
+                    <i class="fa fa-paw"></i> Hanimo</h6>
+            </a>
+            <h3 class="mb-4 font-weight-bold white-text">
+                <strong>{{sujet.title}}</strong>
+            </h3>
+            <p>{{sujet.description}}</p>
+            <p>Le 13/05/2-18 sujet.date</p>
+            <a class="btn btn-pink btn-md mb-3">Read more</a>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-5 col-xl-5 mb-5">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-2">
+                <img src="https://mdbootstrap.com/img/Photos/Others/img%20(34).jpg" alt="Second image in the first version of blog listing"
+                    class="img-fluid">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+    <hr class="mb-5 mt-4 pb-3">
+
+
+</section>
+<!--Section: Blog v.1-->
+            
