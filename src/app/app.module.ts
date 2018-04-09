@@ -17,12 +17,14 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AuthService } from './auth.service';
-import { SujetService} from '../app/sujet.service';
+import { AuthService } from './services/auth.service';
+import { SujetService} from './../app/services/sujet.service';
 
 import {ToastrModule} from 'ngx-toastr';
 import { NouveauSujetComponent } from './nouveau-sujet/nouveau-sujet.component';
 import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
+import { FeedbackListComponent } from './feedback-list/feedback-list.component';
+import { FeedbackService } from './services/feedback.service';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
     LoginComponent,
     HomeComponent,
     NouveauSujetComponent,
-    ListeSujetsComponent
+    ListeSujetsComponent,
+    FeedbackListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService , SujetService],
+  providers: [AuthService , SujetService , FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

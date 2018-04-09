@@ -1,0 +1,65 @@
+
+ <!--Projects section v.3-->
+ <section>
+        
+  <!--Section heading-->
+  <h2 class="text-center h1 my-5">
+      <strong>Liste des Feedbacks</strong>
+  </h2>
+  <!--Section description-->
+  <p class="px-xl-5 text-center grey-text mb-5">
+    bla bla bla lahne !!
+  <!--Grid row-->
+  <div class="row"  *ngFor="let feedback of feedbackList"  >
+  
+      <!--Grid column-->
+      <div class="col-lg-6 col-xl-5 pr-lg-5 pb-5">
+  
+          <!--Image-->
+          <img src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+  
+      </div>
+      <!--Grid column-->
+  
+      <!--Grid column-->
+      <div class="col-lg-6 col-xl-7 pl-lg-5 pb-4">
+  
+          <!--Grid row-->
+          <div class="row mb-3">
+              <div class="col-1 mr-1">
+                  <i class="fa fa-book fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                  <h5 class="font-weight-bold">Feedback</h5>
+                  <p class="grey-text">{{feedback.about}}</p>
+              </div>
+          </div>
+          <!--Grid row-->
+          <!--Grid row-->
+          <div class="row mb-3">
+              <div class="col-1 mr-1">
+                  <i class="fa fa-code fa-2x red-text"></i>
+              </div>
+              <div class="col-10 ">
+                  <!-- Default input -->
+                  <label for="exampleForm2">Reponse</label>
+                  <input type="text" id="exampleForm2" class="form-control">
+              </div>
+          </div>
+          <!--Grid row-->
+          
+  
+         
+  
+      </div>
+      <!--Grid column-->
+  
+  </div>
+  <!--Grid row-->
+  
+  <hr>
+  
+  
+</section>
+<!--Projects section v.3-->
+          

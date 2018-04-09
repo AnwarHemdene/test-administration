@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SujetService} from './../sujet.service';
-import {Sujet} from '../sujet.model';
+import {SujetService} from './../services/sujet.service';
+import {Sujet} from '../models/sujet.model';
 import { ToastrService} from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';   
@@ -14,6 +14,7 @@ export class ListeSujetsComponent implements OnInit {
 
   constructor(private sujetService: SujetService,
     private toastr: ToastrService, private route: ActivatedRoute, private router: Router) { }
+    
     createNew(){
       this.router.navigate(['nouveau-sujet']);
     }
@@ -35,7 +36,7 @@ export class ListeSujetsComponent implements OnInit {
     onDelete(key: string) {
       if (confirm('Are you sure to delete this record ?') == true) {
         this.sujetService.deleteSujet(key);
-        this.toastr.warning("Deleted Successfully", "Employee register");
+        this.toastr.warning("Deleted Successfully", "Sujet deleted");
       }
     }
   }

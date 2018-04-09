@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-import {Sujet} from './sujet.model';
+import {Sujet} from './../models/sujet.model';
 
 @Injectable()
 export class SujetService {
@@ -15,6 +15,7 @@ sujetSelectione: Sujet = new Sujet();
 
    getData(){
      this.sujetList = this.firebase.list('sujets');
+     console.log(this.sujetList);
      return this.sujetList;
    }
 
