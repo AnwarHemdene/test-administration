@@ -1,91 +1,69 @@
-
-
 <div class="container" style="height:1300px;" class="background">
-
-<div>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-           <a class="navbar-brand"  routerLink="home" ><strong>Hanimo</strong></a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-           </button>
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav mr-auto">
-                   <li class="nav-item">
-                       <a class="nav-link" routerLink="profile">Profile<span class="sr-only">(current)</span></a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" routerLink="liste-sujets">Liste des Sujets</a>
-                   </li>
-<!--                    
-                   <li class="nav-item">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand"  routerLink="home" ><strong>Hanimo</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="profile">Profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" routerLink="liste-sujets">Liste des Sujets</a>
-                   </li> -->
-                   <li class="nav-item">
-                       <a class="nav-link" routerLink="">Annonces signalées</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" routerLink="feedback-liste">Feedbacks</a>
-                   </li>
-                   <!-- <li class="nav-item">
-                       <a class="nav-link" href="login">Se Connecter</a>
-                   </li> -->
-                   <li class="nav-item"  *ngIf="authService.user | async" >
-                           <a class="nav-link" (click)="logout()" href="home">Deconnexion</a>
-       
-                   </li>
-               </ul>
-           </div>
-       </nav>
-       </div>
-       <div *ngIf="!(authService.user | async)">
-               <!--Section: Features v.3-->
-               <section  class="pt-5">
-                  
-                 <!--Section heading-->
-                 <h1 class="py-5 font-weight-bold text-center pb-1 " >Hanimo</h1>
-                 <!--Section description-->
-                 <p class="px-5 mb-5  lead white-text text-center">Authentication required for administration</p>
-               
-                   <!-- Login Form -->
-             
-               <div class="  d-flex justify-content-center">
-                 <div class="col-lg-5 text-center text-lg-left " >
-                   <div class="card-body z-depth-2 ">
-                     <!--Header-->
-                     <div class="text-center">
-                       <h3 class="dark-">
-                       <strong>Se Connecter</strong>
-                       </h3>
-                       <hr>
-                     </div>
-               
-                     <!--Body-->
-                     <div class="md-form">
-                       <i class="fa fa-user prefix "></i>
-                       <input type="text" id="form3" class="form-control" [(ngModel)]="email" placeholder="Nom d'utilisateur">
-                     </div>
-                     <div class="md-form">
-                       <i class="fa fa-lock prefix "></i>
-                       <input type="password" id="form2" class="form-control" [(ngModel)]="password"  placeholder="Mot de passe">
-                     </div>
-                     <hr>
-                     <div class="d-flex flex-row-reverse">
-                         <a href="">mot de passe oublié ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Annonces signalées</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="feedback-liste">Feedbacks</a>
+                </li>
+                <li class="nav-item"  *ngIf="authService.user | async" >
+                    <a class="nav-link" (click)="logout()" href="home">Deconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div *ngIf="!(authService.user | async)">
+    <!--Section: Features v.3-->
+        <section  class="pt-5">
+            <!--Section heading-->
+            <h1 class="py-5 font-weight-bold text-center pb-1 " >Hanimo</h1>
+            <!--Section description-->
+            <p class="px-5 mb-5  lead white-text text-center">Authentication required for administration</p>
+            <!-- Login Form -->
+            <div class="  d-flex justify-content-center">
+                <div class="col-lg-5 text-center text-lg-left " >
+                    <div class="card-body z-depth-2 ">
+                        <!--Header-->
+                        <div class="text-center">
+                        <h3 class="dark-"><strong>Se Connecter</strong></h3>
+                        <hr>
                         </div>
-               
-                     <div class="text-center mt-2">
-                       <button class="btn btn-indigo waves-effect waves-light"  (click)="login()" [disabled]="!email || !password" >Se Connecter
-                           <i class="fa fa-paw ml-2"></i>
-                       </button>
-                       
-                     </div>
-               
-                   </div>
-                 </div>  
-                 </div>
-              
-               </section>
-             </div>
-       
+                        <!--Body-->
+                        <div class="md-form">
+                            <i class="fa fa-user prefix "></i>
+                            <input type="text" id="form3" class="form-control" [(ngModel)]="email" placeholder="Nom d'utilisateur">
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix "></i>
+                            <input type="password" id="form2" class="form-control" [(ngModel)]="password"  placeholder="Mot de passe">
+                        </div>
+                        <hr>
+                        <div class="d-flex flex-row-reverse">
+                            <a href="">mot de passe oublié ?</a>
+                        </div>
+                        <div class="text-center mt-2">
+                            <button class="btn btn-indigo waves-effect waves-light"  (click)="login()" [disabled]="!email || !password" >Se Connecter
+                                <i class="fa fa-paw ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </section>
+    </div>
+    <div *ngIf="authService.user | async">
         <router-outlet></router-outlet>
+    </div>  
 </div>

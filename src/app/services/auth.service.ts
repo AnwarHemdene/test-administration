@@ -12,6 +12,7 @@ export class AuthService {
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
    }
+   
    login(email: string, password: string) {
     this.firebaseAuth
       .auth
@@ -22,8 +23,10 @@ export class AuthService {
       .catch(err => {
         console.log('Something went wrong:',err.message);
       });
+      //
+      // this.firebaseAuth.auth.onAuthStateChanged()
   }
-
+// 
   logout() {
     this.firebaseAuth
       .auth

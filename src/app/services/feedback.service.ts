@@ -25,9 +25,9 @@ export class FeedbackService {
   // });
   // }
 
-  updateFeedback(feedback: Feedback){
-    this.feedbackList.update(feedback.$userkey,{
-     about: feedback.about
+  updateFeedback(key : string , reponse: string){
+    this.feedbackList.update(key,{
+     reponse: reponse
     })
   }
 

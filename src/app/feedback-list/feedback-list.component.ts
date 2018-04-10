@@ -9,6 +9,7 @@ import { ToastrService} from 'ngx-toastr';
 })
 export class FeedbackListComponent implements OnInit {
   feedbackList: Feedback[];
+  reponse: string;
   constructor(private feedbackService: FeedbackService,
     private toastr: ToastrService) { }
 
@@ -23,6 +24,12 @@ export class FeedbackListComponent implements OnInit {
       });
     });
   }
+
+  addResponse(key: string){
+    // console.log(this.feedbackList.splice);
+    this.feedbackService.updateFeedback(key,this.reponse);
+  }
+
 
   onDelete(key: string) {
     if (confirm('Are you sure to delete this record ?') == true) {
