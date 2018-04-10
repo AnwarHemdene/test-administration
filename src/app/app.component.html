@@ -51,7 +51,7 @@
                         </div>
                         <hr>
                         <div class="d-flex flex-row-reverse">
-                            <a href="">mot de passe oublié ?</a>
+                            <a (click)="resetPassword(email)">mot de passe oublié ?</a>
                         </div>
                         <div class="text-center mt-2">
                             <button class="btn btn-indigo waves-effect waves-light"  (click)="login()" [disabled]="!email || !password" >Se Connecter

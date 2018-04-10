@@ -9,7 +9,7 @@
   <div class="  d-flex  justify-content-center">
     <div class="col-lg-5 text-center text-lg-left " >
       <div class="card-body z-depth-5 ">
-            <h1 class="py-5 font-weight-bold text-center pb-1 " >Nom d'utilisateur</h1>
+            <h1 class="py-5 font-weight-bold text-center pb-1 " >{{user}}</h1>
         <!--Header-->
         <div class="text-center">
           <h3 class="dark-">
@@ -18,22 +18,19 @@
           <hr>
         </div>
         <!--Body-->
-        <div class="md-form">
-          <i class="fa fa-user prefix "></i>
-          <input type="text" id="form3" class="form-control" placeholder="Ancien">
-        </div>
+        
         <div class="md-form">
           <i class="fa fa-lock prefix "></i>
-          <input type="password" id="form2" class="form-control" placeholder="Nouveau">
+          <input type="password"  class="form-control" placeholder="Nouveau" [(ngModel)]="nouveau">
         </div>
         <div class="md-form">
             <i class="fa fa-lock prefix "></i>
-            <input type="passwordConfirm" id="form2" class="form-control" placeholder="Confirmer nouveau">
+            <input type="password" class="form-control" placeholder="Confirmer nouveau" [(ngModel)]="confirmNouveau">
           </div>
         <hr>
   
         <div class="text-center mt-4">
-                <button class="btn btn-outline-warning" type="submit">Changer<i class="fa fa-paw ml-2"></i></button>
+                <button class="btn btn-outline-warning" type="submit" (click)="resetPassword()">Changer<i class="fa fa-paw ml-2"></i></button>
         </div>
   
       </div>

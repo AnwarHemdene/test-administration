@@ -23,4 +23,9 @@ export class AppComponent {
   logout() {
     this.authService.logout();
   }
+  
+  // resetPassword(email: string) {
+  //   this.authService.resetPassword(this.email)
+  // }
+
 }

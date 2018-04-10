@@ -40,13 +40,14 @@
               <div class="col-1 mr-1">
                   <i class="fa fa-code fa-2x red-text"></i>
               </div>
-              <button type="button" class="btn btn-danger" (click)="addResponse(feedback.$userkey)" >Add response</button>
-
               <div class="col-10 " >
                   <!-- Default input -->
                   <label for="exampleForm2">Reponse</label>
                   <input type="text" id="exampleForm2" class="form-control" [(ngModel)]="reponse">
               </div>
+
+              <button type="button" class="btn btn-danger" (click)="addResponse(feedback.$userkey)" >Add response</button>
+
           </div>
           <!--Grid row-->
           

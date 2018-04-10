@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-
+  other : any;
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
    }
@@ -31,5 +31,30 @@ export class AuthService {
     this.firebaseAuth
       .auth
       .signOut();
+  }
+
+  resetPassword(newPass: string) {
+    var auth = firebase.auth();
+
+
+    var user = firebase.auth().currentUser;
+
+user.updatePassword(newPass).then(function() {
+        console.log("pass changed ");
+  return true;
+}).catch(function(error) {
+  console.log("ERROR ");
+  return false;
+});
+    // console.log(newPass);
+    // auth.currentUser.updatePassword(newPass).then(function() {
+    //   console.log("pass changed ");
+    // }).catch(function(error) {
+    //   console.log("ERROR ");
+    // });
+    // console.log(auth.currentUser.);
+  //   return auth.sendPasswordResetEmail(email)
+  //     .then(() => console.log("email sent"))
+  //     .catch((error) => console.log(error))
   }
 }
