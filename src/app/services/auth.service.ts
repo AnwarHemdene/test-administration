@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
   other : any;
-  constructor(private firebaseAuth: AngularFireAuth) {
+  constructor(private firebaseAuth: AngularFireAuth, private toastr: ToastrService) {
     this.user = firebaseAuth.authState;
    }
    
@@ -18,10 +19,11 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log('Nice, it worked!');
+        // console.log('Nice, it worked!');
+        this.toastr.success('Connecté','Bienvenue Admin');
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
+        this.toastr.warning('ERROR','Veuillez verifier vos informations');
       });
       //
       // this.firebaseAuth.auth.onAuthStateChanged()

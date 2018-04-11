@@ -76,6 +76,8 @@ export class CommentsComponent implements OnInit {
         });
       const listObservable = afList.snapshotChanges();
       listObservable.subscribe();
+      
+      this.commentaire='';
     
 
 
@@ -94,5 +96,5 @@ export class CommentsComponent implements OnInit {
                 
 
   }
-
+  
 }

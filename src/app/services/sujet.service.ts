@@ -4,7 +4,6 @@ import {Sujet} from './../models/sujet.model';
 
 @Injectable()
 export class SujetService {
-
 sujetList: AngularFireList<any>;
 sujetSelectione: Sujet = new Sujet();
 
@@ -26,9 +25,13 @@ sujetSelectione: Sujet = new Sujet();
    }
 
    insertSujet(sujet: Sujet){
+
+    const timestamp = this.getTimeStamp();
      this.sujetList.push({
       title: sujet.title,
       description: sujet.description,
+      date : timestamp,
+      // imgsrc : sujet.imgsrc,
       // imgsrc : sujet.imgsrc,
       // imgName: sujet.imgName
 
@@ -36,10 +39,11 @@ sujetSelectione: Sujet = new Sujet();
    }
 
    updateSujet(sujet: Sujet){
+    const timestamp = this.getTimeStamp();
      this.sujetList.update(sujet.$key,{
       title: sujet.title,
       description: sujet.description,
-      // imgsrc : sujet.imgsrc,
+      date : timestamp,
       // imgName: sujet.imgName
      })
    }
@@ -47,5 +51,17 @@ sujetSelectione: Sujet = new Sujet();
    deleteSujet($key: string){
      this.sujetList.remove($key);
    }
-   
+   getTimeStamp(){
+    const now = new Date();
+    const date = now.getUTCFullYear() + '/' +
+                (now.getUTCMonth()+1) + '/' +
+                now.getUTCDate();
+    const time = now.getUTCHours() + ':' +
+                now.getUTCMinutes() + ':' + 
+                now.getUTCSeconds();
+    return (date + ' ' + time);
+                
+
+  }
+  
 }

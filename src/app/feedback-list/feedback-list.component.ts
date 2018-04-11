@@ -28,6 +28,8 @@ export class FeedbackListComponent implements OnInit {
   addResponse(key: string){
     // console.log(this.feedbackList.splice);
     this.feedbackService.updateFeedback(key,this.reponse);
+    this.toastr.info("Reponse Ajouté avec succes ", "Feedback envoyé");
+    this.reponse="Repondre...";
   }
 
 

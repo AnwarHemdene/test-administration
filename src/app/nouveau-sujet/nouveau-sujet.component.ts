@@ -4,6 +4,7 @@ import {SujetService} from './../services/sujet.service';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
+
 @Component({
   selector: 'app-nouveau-sujet',
   templateUrl: './nouveau-sujet.component.html',
@@ -56,6 +57,9 @@ export class NouveauSujetComponent implements OnInit {
       description: '',
       // imgsrc: '',
       // imgName: '',
+      date : null
     }
   }
+
+  
 }
