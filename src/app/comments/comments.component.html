@@ -1,7 +1,23 @@
-<div  *ngFor="let comment of commentList" class="custom">
+<!-- <div  *ngFor="let comment of commentList" class="custom">
+
+  <label for="exampleForm2">Reponse</label>
+  <input type="text" id="exampleForm2" class="form-control" [(ngModel)]="commentaire">
+  <button type="button" class="btn btn-danger" (click)="commenter(comment)" >Commenter</button>
 
   <hr>
   {{comment.author}}
     {{comment.content}}
 
-</div>
+</div> -->
+<div class="row columns" class="custom">
+  
+  
+      <div class="chat-container" *ngFor="let comment of commentList">
+        <a href="#">{{comment.author}}, Le {{comment.date}}
+        </a>
+        
+        <p>{{comment.content}}</p>
+      </div>
+      <input type="text" id="message" placeholder="Commenter..." (keyup.enter)="commenter(comment)" [(ngModel)]="commentaire" />
+
+  </div>
