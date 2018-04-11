@@ -50,7 +50,9 @@
                 </h3>
                 <p>{{sujet.description}}</p>
                 <p>Le 13/05/2-18 sujet.date</p>
-                <a class="btn btn-orange btn-md mb-3">Ouvrir Discussion</a>
+                <button type="button" class="btn btn-outline-warning waves-effect" (click)="goToCommentes(sujet)" >Commentaires</button>
+
+                <!-- <a class="btn btn-orange btn-md mb-3" (click)="goToCommentes(sujet)" routerLink="/comments/{{sujet}}">Commentaires</a> -->
             </div>
             <!--Grid column-->
             <!--Grid column-->

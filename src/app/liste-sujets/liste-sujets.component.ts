@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ListeSujetsComponent implements OnInit {
   sujetList: Sujet[];
-
+  comments : any;
   constructor(private sujetService: SujetService,
     private toastr: ToastrService, private route: ActivatedRoute, private router: Router) { }
     
@@ -38,6 +38,10 @@ export class ListeSujetsComponent implements OnInit {
         this.sujetService.deleteSujet(key);
         this.toastr.warning("Deleted Successfully", "Sujet deleted");
       }
+    }
+    goToCommentes(sujet: Sujet){
+      // console.log(sujet);
+      this.router.navigate(['comments', sujet.$key]);
     }
   }
   

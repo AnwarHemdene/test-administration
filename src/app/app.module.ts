@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LoginComponent } from './login/login.component';
 import { FormsModule} from '@angular/forms';
 
 
@@ -25,17 +24,18 @@ import { NouveauSujetComponent } from './nouveau-sujet/nouveau-sujet.component';
 import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { FeedbackService } from './services/feedback.service';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    LoginComponent,
     HomeComponent,
     NouveauSujetComponent,
     ListeSujetsComponent,
-    FeedbackListComponent
+    FeedbackListComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,12 @@ sujetSelectione: Sujet = new Sujet();
      return this.sujetList;
    }
 
+   getComments(key : string){
+      // this.sujetList = this.firebase.list('sujets/'+key+'/comments');
+      // console.log(this.firebase.list('sujets/'+key+'/comments'));
+      return this.firebase.list('sujets/'+key+'/comments');
+   }
+
    insertSujet(sujet: Sujet){
      this.sujetList.push({
       title: sujet.title,
@@ -41,4 +47,5 @@ sujetSelectione: Sujet = new Sujet();
    deleteSujet($key: string){
      this.sujetList.remove($key);
    }
+   
 }
