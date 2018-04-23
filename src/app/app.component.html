@@ -1,4 +1,5 @@
 <div class="container" style="height:1300px;" class="background">
+    <div *ngIf="authService.user | async">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
         <a class="navbar-brand"  routerLink="home" ><strong>Hanimo</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +14,7 @@
                     <a class="nav-link" routerLink="liste-sujets">Liste des Sujets</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="">Annonces signalées</a>
+                    <a class="nav-link" routerLink="annonces">Annonces</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="feedback-liste">Feedbacks</a>
@@ -24,7 +25,8 @@
             </ul>
         </div>
     </nav>
-    <div *ngIf="!(authService.user | async)">
+</div>
+    <div *ngIf="!(authService.user | async)" class="custom">
     <!--Section: Features v.3-->
         <section  class="pt-5">
             <!--Section heading-->

@@ -25,6 +25,9 @@ import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { FeedbackService } from './services/feedback.service';
 import { CommentsComponent } from './comments/comments.component';
+import { ResetPassComponent } from './reset-pass/reset-pass.component';
+import { AnnoncesComponent } from './annonces/annonces.component';
+import { AnnonceService } from './services/annonce.service';
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { CommentsComponent } from './comments/comments.component';
     NouveauSujetComponent,
     ListeSujetsComponent,
     FeedbackListComponent,
-    CommentsComponent
+    CommentsComponent,
+    ResetPassComponent,
+    AnnoncesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ import { CommentsComponent } from './comments/comments.component';
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService , SujetService , FeedbackService],
+  providers: [AuthService , SujetService , FeedbackService , AnnonceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

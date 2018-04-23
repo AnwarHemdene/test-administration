@@ -7,6 +7,8 @@ import {NouveauSujetComponent} from './nouveau-sujet/nouveau-sujet.component'
 import { ListeSujetsComponent } from './liste-sujets/liste-sujets.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { CommentsComponent } from './comments/comments.component';
+import { ResetPassComponent } from './reset-pass/reset-pass.component';
+import { AnnoncesComponent } from './annonces/annonces.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -14,7 +16,8 @@ const routes: Routes = [
   { path: 'liste-sujets', component: ListeSujetsComponent},
   { path: 'nouveau-sujet', component: NouveauSujetComponent},
   { path: 'feedback-liste', component: FeedbackListComponent},
-  { path: 'comments/:sujet', component: CommentsComponent}
+  { path: 'comments/:sujet', component: CommentsComponent},
+  { path: 'annonces', component: AnnoncesComponent}
 ];
 
 @NgModule({
