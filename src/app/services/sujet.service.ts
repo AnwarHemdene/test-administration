@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {Sujet} from './../models/sujet.model';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class SujetService {
 sujetList: AngularFireList<any>;
 sujetSelectione: Sujet = new Sujet();
+
+downloadURL: Observable<string>;
 
 
   constructor(private firebase: AngularFireDatabase) {
@@ -24,26 +27,29 @@ sujetSelectione: Sujet = new Sujet();
       return this.firebase.list('sujets/'+key+'/comments');
    }
 
-   insertSujet(sujet: Sujet){
-
+   insertSujet(sujet: Sujet, downloadURL: string){
     const timestamp = this.getTimeStamp();
      this.sujetList.push({
       title: sujet.title,
       description: sujet.description,
       date : timestamp,
+      image: downloadURL
+      // imgURL: downloadURL
       // imgsrc : sujet.imgsrc,
       // imgsrc : sujet.imgsrc,
-      // imgName: sujet.imgName
+      // imgName: sujet.imgName,
 
    });
    }
 
-   updateSujet(sujet: Sujet){
+   updateSujet(sujet: Sujet,downloadURL: string){
     const timestamp = this.getTimeStamp();
      this.sujetList.update(sujet.$key,{
       title: sujet.title,
       description: sujet.description,
       date : timestamp,
+      image: downloadURL,
+      // imgURL: downloadURL
       // imgName: sujet.imgName
      })
    }

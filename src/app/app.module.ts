@@ -28,7 +28,8 @@ import { CommentsComponent } from './comments/comments.component';
 import { ResetPassComponent } from './reset-pass/reset-pass.component';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceService } from './services/annonce.service';
-
+import { TestuploadComponent } from './testupload/testupload.component';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AnnonceService } from './services/annonce.service';
     FeedbackListComponent,
     CommentsComponent,
     ResetPassComponent,
-    AnnoncesComponent
+    AnnoncesComponent,
+    TestuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { AnnonceService } from './services/annonce.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFireStorageModule
   ],
   providers: [AuthService , SujetService , FeedbackService , AnnonceService],
   bootstrap: [AppComponent]

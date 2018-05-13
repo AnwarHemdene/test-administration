@@ -31,5 +31,5 @@ export class AnnonceService {
 
   deleteFeedback($key: string){
     this.annoncesList.remove($key);
-  }
+  }z
 }

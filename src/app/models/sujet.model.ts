@@ -1,3 +1,5 @@
+import { Observable } from "rxjs/Observable";
+
 export class Sujet {
     $key : string;
     title: string;
@@ -5,5 +7,6 @@ export class Sujet {
     date : any;
     // imgsrc : string;
     // imgName: string;
+    image: File;
     
 }

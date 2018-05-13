@@ -73,9 +73,16 @@
                 <textarea name ="description" class="form-control" #description="ngModel" [(ngModel)]="sujetService.description" ></textarea>
                 
                     <!-- Grid row -->
-    <!--                 
+                    
       <label for="inputLGEx"><h5>Upload Photo</h5></label><br>
-      <input mdbActive  type="file"  uploader="uploader" multiple="" class=" btn-primary btn-md">
+      <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+          File uploaded: <a [href]="downloadSrc" >{{downloadSrc}}</a>
+      </div>
+      <!--<input mdbActive  type="file"  uploader="uploader" multiple="" class=" btn-primary btn-md">
                                   -->
                                   <!-- <input class mdbActive  type="file" ngf-select ng-model="file" name="file" 
                                   ngf-pattern="'image/*'"accept="image/*" ngf-max-size="20MB" class=" btn-primary btn-md" />
