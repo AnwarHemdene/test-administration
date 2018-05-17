@@ -6,7 +6,6 @@ export class AnnonceService {
 
   annoncesList: AngularFireList<any>;
   
-  
   constructor(private firebase: AngularFireDatabase) {
 
   }
@@ -31,5 +30,31 @@ export class AnnonceService {
 
   deleteFeedback($key: string){
     this.annoncesList.remove($key);
-  }z
+  }
+
+  updateTypeTop(type : any, idAnnonce: string){
+    if(type == 0){
+      console.log("its in its best rate");
+    }
+    else{
+      let newType = type - 1;
+      this.annoncesList.update(idAnnonce ,{
+        typeAnnonce : newType,
+      })
+    }
+    
+  }
+  updateTypeDown(type : any, idAnnonce: string){
+    if(type == 3){
+      console.log("its in its minus rate");
+    }
+    else {
+      let newType = type + 1;
+      this.annoncesList.update(idAnnonce ,{
+        typeAnnonce : newType,
+      })
+    }
+    
+  }
+
 }

@@ -21,4 +21,13 @@ export class AnnoncesComponent implements OnInit {
       });
     });
   }
+
+  add(annonce : any){
+    this.annonceService.updateTypeTop(annonce.typeAnnonce , annonce.idAnnonce);
+  }
+  sous(annonce : any){
+      this.annonceService.updateTypeDown(annonce.typeAnnonce , annonce.idAnnonce);
+      
+    }
+  
 }

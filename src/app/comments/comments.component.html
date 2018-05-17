@@ -17,6 +17,11 @@
         </a>
         
         <p>{{comment.content}}</p>
+        
+      <div class="d-flex flex-row-reverse">
+          
+          <div class="p-2"><i  class="fa fa-trash-o" aria-hidden="true"></i></div>
+        
       </div>
       <input type="text" id="message" placeholder="Commenter..." (keyup.enter)="commenter(comment)" [(ngModel)]="commentaire" />
 

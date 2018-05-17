@@ -20,7 +20,7 @@ export class NouveauSujetComponent implements OnInit {
   task: AngularFireUploadTask;
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;
-  
+   URL ;
   img;
 
   constructor( private sujetService:  SujetService , private http: HttpClient ,
@@ -50,6 +50,7 @@ export class NouveauSujetComponent implements OnInit {
 
   onSubmit(sujetForm : NgForm){
     console.log(this.downloadURL.value);
+    URL = this.downloadURL.value;
     if(sujetForm.value.$key == null)
     
     this.sujetService.insertSujet(sujetForm.value, this.downloadURL.value);

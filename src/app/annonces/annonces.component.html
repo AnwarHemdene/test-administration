@@ -17,11 +17,20 @@
   <div class="card-body elegant-color white-text rounded-bottom">
 
 
-    <div class="d-flex flex-row-reverse">
-      <div class="p-2"><!-- Social shares button -->
-        <a class="activator waves-effect"><i class="fa fa-star yellow-text"></i></a>
+     <div class="d-flex flex-row-reverse">
+      <div class="p-2"> 
+        <!-- Social shares button -->
+        <button class="btn btn-default-outline"  type="button" (click)="add(annonce)">
+            <i class="fa fa-star blue-text" ></i>
+             </button>
       </div>
-    </div>  
+      <div class="p-2"> 
+          <!-- Social shares button -->
+          <button class="btn btn-default-outline" type="button" (click)="sous(annonce)">
+              <i class="fa fa-star red-text"></i>
+               </button>
+        </div>
+    </div>   
     <!-- Title -->
     <h4 class="card-title">{{annonce.titleAnnonce}}</h4>
     <hr class="hr-light">
@@ -38,7 +47,7 @@
 
 
     <a href="#!" class="white-text d-flex justify-content-end"><h5>Read more <i class="fa fa-angle-double-right"></i></h5></a>
-
+    
   </div>
 
 </div>
