@@ -7,6 +7,7 @@ import {AnnonceService} from './../services/annonce.service';
 })
 export class AnnoncesComponent implements OnInit {
   annonceList: any[];
+  imgList: any[];
   constructor(private annonceService: AnnonceService) { }
 
   ngOnInit() {
@@ -16,11 +17,12 @@ export class AnnoncesComponent implements OnInit {
           item.forEach(element => {
         this.annonceList.push(element.payload.toJSON());
         for (let i of this.annonceList) {
-          console.log(i); // "4", "5", "6"
+          console.log("this is iiiiii " + element.payload.toJSON()); // "4", "5", "6"
        }
       });
     });
   }
+
 
   add(annonce : any){
     this.annonceService.updateTypeTop(annonce.typeAnnonce , annonce.idAnnonce);
@@ -28,6 +30,9 @@ export class AnnoncesComponent implements OnInit {
   sous(annonce : any){
       this.annonceService.updateTypeDown(annonce.typeAnnonce , annonce.idAnnonce);
       
-    }
+  }
+  delete(annonce : any){
+    this.annonceService.delete(annonce.idAnnonce);
+  }
   
 }

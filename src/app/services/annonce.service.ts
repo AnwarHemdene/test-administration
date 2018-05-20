@@ -15,6 +15,12 @@ export class AnnonceService {
     console.log(this.annoncesList);
     return this.annoncesList;
   }
+  // getImage(){
+  //   let sImages = this.firebase.list('/annonces/IdAnnonce/URLimg').subscribe(data => {
+  //     this.images = data;
+  //     sImages.unsubscribe();
+  //   });
+  // }
 
   // insertFeedback(feedback: Feedback){
   //   this.feedbackList.push({
@@ -55,6 +61,9 @@ export class AnnonceService {
       })
     }
     
+  }
+  delete(key:  string){
+    this.annoncesList.remove(key);
   }
 
 }

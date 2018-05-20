@@ -69,5 +69,8 @@ downloadURL: Observable<string>;
                 
 
   }
-  
+  deleteComment(keycomment: string, keySujet){
+    this.sujetList = this.firebase.list('sujets/'+keySujet+'/comments');
+    this.sujetList.remove(keycomment);
+  }
 }

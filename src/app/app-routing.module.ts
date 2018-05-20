@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'nouveau-sujet', component: NouveauSujetComponent},
   { path: 'feedback-liste', component: FeedbackListComponent},
   { path: 'comments/:sujet', component: CommentsComponent},
-  { path: 'annonces', component: AnnoncesComponent},
-  { path: 'testUpload', component: TestuploadComponent}
+  { path: 'annonces', component: AnnoncesComponent}
+  // { path: 'testUpload', component: TestuploadComponent}
 ];
 
 @NgModule({

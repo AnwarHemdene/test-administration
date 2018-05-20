@@ -52,12 +52,17 @@ body {
     font-family: 'Raleway';
 }
 button {
-    background:#4267B2;
     color:white;
-    padding: 1.2em;
-    width:300px;
+    padding: 0em;
+    width: 120px;
+    height: 30px;
     text-align:center;
     font-size:1.2em;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     cursor:pointer;
+    display: inline; 
+
 }
+.inline { 
+    margin:10px;
+    }

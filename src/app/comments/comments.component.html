@@ -10,19 +10,20 @@
 
 </div> -->
 <div class="row columns" class="custom">
-  
-  
-      <div class="chat-container" *ngFor="let comment of commentList">
-        <a href="#">{{comment.author}}, Le {{comment.date}}
-        </a>
-        
-        <p>{{comment.content}}</p>
-        
-      <div class="d-flex flex-row-reverse">
-          
-          <div class="p-2"><i  class="fa fa-trash-o" aria-hidden="true"></i></div>
-        
-      </div>
-      <input type="text" id="message" placeholder="Commenter..." (keyup.enter)="commenter(comment)" [(ngModel)]="commentaire" />
+  <div class="chat-container" *ngFor="let comment of commentList">
+    <a href="#">{{comment.author}}, Le {{comment.date}}</a>
+    
+      <button type="button" class="btn btn-danger waves-effect" (click)="delete(comment)">
+          <i class="fa fa-trash white-text" ></i>Supprimer
+      </button>
 
-  </div>
+      <div class="flex-fill">
+            <!-- Social shares button -->
+            <p>{{comment.content}}</p>
+
+          </div>
+          
+    
+  </div>      
+  <input type="text" id="message" placeholder="Commenter..." (keyup.enter)="commenter(comment)" [(ngModel)]="commentaire" />
+</div>

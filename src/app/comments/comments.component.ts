@@ -17,6 +17,7 @@ export class CommentsComponent implements OnInit {
   commentList: any[];
   comments :  AngularFireList<any>;
   commentaire: string;
+  refSujet;
   constructor(private route : ActivatedRoute , private sujetService: SujetService ,
     private afDb: AngularFireDatabase) {
   this.route.params.subscribe( data => this.data = data);
@@ -37,7 +38,7 @@ export class CommentsComponent implements OnInit {
     });
   }
 
-  commenter(comments: any){
+  async  commenter(comments: any){
     // comments: any[];
     // content: string;
     // author: string ;
@@ -65,17 +66,18 @@ export class CommentsComponent implements OnInit {
     //   // console.log(listObservable);
     //   listObservable.subscribe();
 
-
-      const afList = this.afDb.list('sujets/'+this.data.sujet+'/comments');
-      afList.push({
+    let newRef = this.afDb.list('sujets/'+this.data.sujet+'/comments').push({});
+    this.refSujet = this.afDb.list('sujets/'+this.data.sujet);
+      
+    await newRef.set({
         content: this.commentaire,
           author : 'Admin',
           // firebase.auth().currentUser.email,
           date: timestamp,
-          commentkey: "bla"
+          commentkey: newRef.key,
         });
-      const listObservable = afList.snapshotChanges();
-      listObservable.subscribe();
+      // const listObservable = afList.snapshotChanges();
+      // listObservable.subscribe();
       
       this.commentaire='';
     
@@ -84,6 +86,7 @@ export class CommentsComponent implements OnInit {
 
 
   }
+
   getTimeStamp(){
     const now = new Date();
     const date = now.getUTCFullYear() + '/' +
@@ -96,5 +99,12 @@ export class CommentsComponent implements OnInit {
                 
 
   }
+  delete(comment: any){
+    // var x = this.sujetService.getComments(this.data.sujet);
+console.log(this.data.sujet);
+    this.sujetService.deleteComment(comment.commentkey, this.data.sujet);
+  }
   
 }
+
+
